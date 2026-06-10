@@ -1,2 +1,5 @@
-# navadheer23361.github.io
-Personal portfolio website - AI &amp; Robotics Engineer, IIT Mandi
+# Navadheer Kumar — Portfolio
+
+Personal portfolio website built with HTML/CSS.
+
+🌐 Live at: https://navadheer23361.github.io
