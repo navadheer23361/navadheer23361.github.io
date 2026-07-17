@@ -8,22 +8,19 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=Syne:wght@400;600;700;800&family=Inter:wght@300;400;500&display=swap" rel="stylesheet" />
   <style>
-    /* ─── TOKEN SYSTEM ─────────────────────────────────── */
     :root {
       --bg:          #0A0B0F;
       --surface:     #111318;
       --surface2:    #181B22;
       --border:      #252833;
-      --accent:      #3DFFD0;   /* electric teal */
-      --accent2:     #7B61FF;   /* violet */
+      --accent:      #3DFFD0;
+      --accent2:     #7B61FF;
       --text-hi:     #F0F2F7;
       --text-mid:    #8A90A0;
       --text-lo:     #4A5060;
       --danger:      #FF5E7A;
       --radius:      6px;
     }
-
-    /* ─── RESET ────────────────────────────────────────── */
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
     html { scroll-behavior: smooth; }
     body {
@@ -38,17 +35,12 @@
     ul { list-style: none; }
     img { max-width: 100%; display: block; }
     @media (prefers-reduced-motion: reduce) { * { animation: none !important; transition: none !important; } }
-
-    /* ─── TYPOGRAPHY ───────────────────────────────────── */
     .display   { font-family: 'Syne', sans-serif; font-weight: 800; }
     .heading   { font-family: 'Syne', sans-serif; font-weight: 700; }
     .mono      { font-family: 'IBM Plex Mono', monospace; }
-
-    /* ─── LAYOUT UTILITIES ─────────────────────────────── */
     .container { max-width: 1080px; margin: 0 auto; padding: 0 24px; }
     .section   { padding: 100px 0; }
     .section--tight { padding: 72px 0; }
-
     .eyebrow {
       font-family: 'IBM Plex Mono', monospace;
       font-size: 11px;
@@ -69,7 +61,6 @@
       background: var(--accent);
       opacity: 0.5;
     }
-
     .section-title {
       font-family: 'Syne', sans-serif;
       font-weight: 800;
@@ -78,8 +69,6 @@
       color: var(--text-hi);
       margin-bottom: 48px;
     }
-
-    /* ─── NAV ──────────────────────────────────────────── */
     nav {
       position: fixed;
       top: 0; left: 0; right: 0;
@@ -93,17 +82,7 @@
       backdrop-filter: blur(14px);
       border-bottom: 1px solid var(--border);
     }
-    .nav-logo {
-      font-family: 'IBM Plex Mono', monospace;
-      font-size: 13px;
-      font-weight: 600;
-      color: var(--accent);
-      letter-spacing: 0.06em;
-    }
-    .nav-links {
-      display: flex;
-      gap: 32px;
-    }
+    .nav-links { display: flex; gap: 32px; }
     .nav-links a {
       font-family: 'IBM Plex Mono', monospace;
       font-size: 12px;
@@ -112,8 +91,6 @@
       transition: color 0.2s;
     }
     .nav-links a:hover { color: var(--accent); }
-
-    /* ─── HERO ─────────────────────────────────────────── */
     #hero {
       min-height: 100vh;
       display: flex;
@@ -122,7 +99,6 @@
       position: relative;
       overflow: hidden;
     }
-    /* grid background — the signature element */
     #hero::before {
       content: '';
       position: absolute;
@@ -142,11 +118,7 @@
       background: linear-gradient(transparent, var(--bg));
       pointer-events: none;
     }
-    .hero-inner {
-      position: relative;
-      z-index: 1;
-      max-width: 760px;
-    }
+    .hero-inner { position: relative; z-index: 1; max-width: 760px; }
     .hero-badge {
       display: inline-flex;
       align-items: center;
@@ -179,11 +151,7 @@
       color: var(--text-hi);
       margin-bottom: 24px;
     }
-    .hero-headline .accent-word {
-      color: var(--accent);
-      position: relative;
-    }
-    /* terminal cursor — the signature */
+    .hero-headline .accent-word { color: var(--accent); }
     .cursor {
       display: inline-block;
       width: 3px;
@@ -204,11 +172,7 @@
       margin-bottom: 40px;
       line-height: 1.75;
     }
-    .hero-cta-row {
-      display: flex;
-      gap: 16px;
-      flex-wrap: wrap;
-    }
+    .hero-cta-row { display: flex; gap: 16px; flex-wrap: wrap; }
     .btn-primary {
       display: inline-flex;
       align-items: center;
@@ -223,29 +187,7 @@
       transition: opacity 0.2s, transform 0.2s;
     }
     .btn-primary:hover { opacity: 0.88; transform: translateY(-1px); }
-    .btn-ghost {
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      font-family: 'IBM Plex Mono', monospace;
-      font-size: 13px;
-      font-weight: 500;
-      padding: 12px 24px;
-      border-radius: var(--radius);
-      border: 1px solid var(--border);
-      color: var(--text-mid);
-      transition: border-color 0.2s, color 0.2s, transform 0.2s;
-    }
-    .btn-ghost:hover { border-color: var(--accent); color: var(--accent); transform: translateY(-1px); }
-
-    /* ─── DIVIDER ───────────────────────────────────────── */
-    .divider {
-      border: none;
-      border-top: 1px solid var(--border);
-      margin: 0;
-    }
-
-    /* ─── ABOUT ─────────────────────────────────────────── */
+    .divider { border: none; border-top: 1px solid var(--border); margin: 0; }
     #about .about-grid {
       display: grid;
       grid-template-columns: 1fr 1fr;
@@ -254,11 +196,7 @@
     }
     .about-text p { color: var(--text-mid); margin-bottom: 20px; font-size: 16px; line-height: 1.8; }
     .about-text p strong { color: var(--text-hi); font-weight: 500; }
-    .about-stats {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 20px;
-    }
+    .about-stats { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
     .stat-card {
       background: var(--surface);
       border: 1px solid var(--border);
@@ -281,14 +219,8 @@
       color: var(--text-mid);
       letter-spacing: 0.08em;
     }
-
-    /* ─── SKILLS ────────────────────────────────────────── */
     #skills { background: var(--surface); }
-    .skills-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 24px;
-    }
+    .skills-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
     .skill-card {
       background: var(--bg);
       border: 1px solid var(--border);
@@ -297,12 +229,7 @@
       transition: border-color 0.2s, transform 0.2s;
     }
     .skill-card:hover { border-color: rgba(61,255,208,0.3); transform: translateY(-2px); }
-    .skill-card-header {
-      display: flex;
-      align-items: center;
-      gap: 12px;
-      margin-bottom: 20px;
-    }
+    .skill-card-header { display: flex; align-items: center; gap: 12px; margin-bottom: 20px; }
     .skill-icon {
       width: 36px; height: 36px;
       border-radius: var(--radius);
@@ -320,11 +247,7 @@
       letter-spacing: 0.08em;
       text-transform: uppercase;
     }
-    .skill-tags {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 8px;
-    }
+    .skill-tags { display: flex; flex-wrap: wrap; gap: 8px; }
     .tag {
       font-family: 'IBM Plex Mono', monospace;
       font-size: 11px;
@@ -335,23 +258,9 @@
       border: 1px solid var(--border);
       white-space: nowrap;
     }
-    .tag--accent {
-      background: rgba(61,255,208,0.08);
-      color: var(--accent);
-      border-color: rgba(61,255,208,0.25);
-    }
-    .tag--violet {
-      background: rgba(123,97,255,0.1);
-      color: #A695FF;
-      border-color: rgba(123,97,255,0.25);
-    }
-
-    /* ─── PROJECTS ──────────────────────────────────────── */
-    .projects-list {
-      display: flex;
-      flex-direction: column;
-      gap: 32px;
-    }
+    .tag--accent { background: rgba(61,255,208,0.08); color: var(--accent); border-color: rgba(61,255,208,0.25); }
+    .tag--violet { background: rgba(123,97,255,0.1); color: #A695FF; border-color: rgba(123,97,255,0.25); }
+    .projects-list { display: flex; flex-direction: column; gap: 32px; }
     .project-card {
       background: var(--surface);
       border: 1px solid var(--border);
@@ -390,44 +299,12 @@
       color: var(--text-hi);
       margin-bottom: 8px;
     }
-    .project-desc {
-      font-size: 14px;
-      color: var(--text-mid);
-      margin-bottom: 20px;
-      max-width: 600px;
-    }
-    .project-stack {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 8px;
-      margin-bottom: 20px;
-    }
-    .project-bullets {
-      padding-left: 0;
-      display: flex;
-      flex-direction: column;
-      gap: 8px;
-    }
-    .project-bullets li {
-      font-size: 14px;
-      color: var(--text-mid);
-      padding-left: 16px;
-      position: relative;
-    }
-    .project-bullets li::before {
-      content: '→';
-      position: absolute;
-      left: 0;
-      color: var(--accent);
-      font-size: 12px;
-    }
-    .project-links {
-      display: flex;
-      flex-direction: column;
-      align-items: flex-end;
-      gap: 12px;
-      flex-shrink: 0;
-    }
+    .project-desc { font-size: 14px; color: var(--text-mid); margin-bottom: 20px; max-width: 600px; }
+    .project-stack { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 20px; }
+    .project-bullets { padding-left: 0; display: flex; flex-direction: column; gap: 8px; }
+    .project-bullets li { font-size: 14px; color: var(--text-mid); padding-left: 16px; position: relative; }
+    .project-bullets li::before { content: '→'; position: absolute; left: 0; color: var(--accent); font-size: 12px; }
+    .project-links { display: flex; flex-direction: column; align-items: flex-end; gap: 12px; flex-shrink: 0; }
     .link-btn {
       display: inline-flex;
       align-items: center;
@@ -444,12 +321,7 @@
     }
     .link-btn:hover { border-color: var(--accent); color: var(--accent); }
     .link-btn svg { width: 13px; height: 13px; }
-
-    /* ─── TIMELINE ──────────────────────────────────────── */
-    .timeline {
-      position: relative;
-      padding-left: 28px;
-    }
+    .timeline { position: relative; padding-left: 28px; }
     .timeline::before {
       content: '';
       position: absolute;
@@ -457,15 +329,11 @@
       width: 1px;
       background: var(--border);
     }
-    .timeline-item {
-      position: relative;
-      padding-bottom: 48px;
-    }
+    .timeline-item { position: relative; padding-bottom: 48px; }
     .timeline-item:last-child { padding-bottom: 0; }
     .timeline-dot {
       position: absolute;
-      left: -32px;
-      top: 4px;
+      left: -32px; top: 4px;
       width: 9px; height: 9px;
       border-radius: 50%;
       background: var(--accent);
@@ -491,11 +359,7 @@
       color: var(--text-mid);
       margin-bottom: 12px;
     }
-    .timeline-desc {
-      font-size: 14px;
-      color: var(--text-mid);
-      line-height: 1.7;
-    }
+    .timeline-desc { font-size: 14px; color: var(--text-mid); line-height: 1.7; }
     .timeline-desc ul { padding-left: 0; display: flex; flex-direction: column; gap: 6px; }
     .timeline-desc li { padding-left: 16px; position: relative; }
     .timeline-desc li::before { content: '—'; position: absolute; left: 0; color: var(--text-lo); }
@@ -510,14 +374,7 @@
       border: 1px solid rgba(61,255,208,0.25);
       margin-bottom: 10px;
     }
-
-    /* ─── TWO-COL LAYOUT (experience + education) ───────── */
-    .two-col {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 64px;
-      align-items: start;
-    }
+    .two-col { display: grid; grid-template-columns: 1fr 1fr; gap: 64px; align-items: start; }
     .col-label {
       font-family: 'IBM Plex Mono', monospace;
       font-size: 11px;
@@ -529,8 +386,6 @@
       padding-bottom: 12px;
       border-bottom: 1px solid var(--border);
     }
-
-    /* ─── CERTIFICATIONS ────────────────────────────────── */
     .cert-list { display: flex; flex-direction: column; gap: 12px; }
     .cert-item {
       display: flex;
@@ -544,12 +399,7 @@
       color: var(--text-mid);
     }
     .cert-icon { font-size: 18px; }
-
-    /* ─── CONTACT ───────────────────────────────────────── */
-    #contact {
-      background: var(--surface);
-      text-align: center;
-    }
+    #contact { background: var(--surface); text-align: center; }
     .contact-headline {
       font-family: 'Syne', sans-serif;
       font-size: clamp(28px, 4vw, 48px);
@@ -594,8 +444,6 @@
       color: var(--text-lo);
       letter-spacing: 0.06em;
     }
-
-    /* ─── RESPONSIVE ────────────────────────────────────── */
     @media (max-width: 768px) {
       #about .about-grid { grid-template-columns: 1fr; gap: 40px; }
       .skills-grid { grid-template-columns: 1fr 1fr; }
@@ -612,7 +460,6 @@
 </head>
 <body>
 
-<!-- ─── NAV ──────────────────────────────────────────────── -->
 <nav>
   <span></span>
   <ul class="nav-links">
@@ -624,7 +471,6 @@
   </ul>
 </nav>
 
-<!-- ─── HERO ──────────────────────────────────────────────── -->
 <section id="hero">
   <div class="container">
     <div class="hero-inner">
@@ -652,7 +498,6 @@
 
 <hr class="divider" />
 
-<!-- ─── ABOUT ─────────────────────────────────────────────── -->
 <section id="about" class="section">
   <div class="container">
     <div class="about-grid">
@@ -689,13 +534,11 @@
 
 <hr class="divider" />
 
-<!-- ─── SKILLS ────────────────────────────────────────────── -->
 <section id="skills" class="section">
   <div class="container">
     <p class="eyebrow">Technical Arsenal</p>
     <h2 class="section-title">Core Skills</h2>
     <div class="skills-grid">
-
       <div class="skill-card">
         <div class="skill-card-header">
           <div class="skill-icon">💻</div>
@@ -707,7 +550,6 @@
           <span class="tag tag--accent">Arduino (C++)</span>
         </div>
       </div>
-
       <div class="skill-card">
         <div class="skill-card-header">
           <div class="skill-icon">🧠</div>
@@ -728,7 +570,6 @@
           <span class="tag">PCA</span>
         </div>
       </div>
-
       <div class="skill-card">
         <div class="skill-card-header">
           <div class="skill-icon">🤖</div>
@@ -744,7 +585,6 @@
           <span class="tag">Dynamic Programming</span>
         </div>
       </div>
-
       <div class="skill-card">
         <div class="skill-card-header">
           <div class="skill-icon">🖼️</div>
@@ -761,7 +601,6 @@
           <span class="tag">Feature Extraction</span>
         </div>
       </div>
-
       <div class="skill-card">
         <div class="skill-card-header">
           <div class="skill-icon">⚙️</div>
@@ -777,7 +616,6 @@
           <span class="tag">NLTK</span>
         </div>
       </div>
-
       <div class="skill-card">
         <div class="skill-card-header">
           <div class="skill-icon">🔧</div>
@@ -794,22 +632,18 @@
           <span class="tag">Control Systems</span>
         </div>
       </div>
-
     </div>
   </div>
 </section>
 
 <hr class="divider" />
 
-<!-- ─── PROJECTS ──────────────────────────────────────────── -->
 <section id="projects" class="section">
   <div class="container">
     <p class="eyebrow">Selected Work</p>
     <h2 class="section-title">Featured Projects</h2>
-
     <div class="projects-list">
 
-      <!-- Project 1 -->
       <div class="project-card">
         <div>
           <div class="project-number">01 / DEEP LEARNING · MEDICAL IMAGING</div>
@@ -839,7 +673,6 @@
         </div>
       </div>
 
-      <!-- Project 2 -->
       <div class="project-card">
         <div>
           <div class="project-number">02 / COMPUTER VISION · HCI</div>
@@ -868,7 +701,6 @@
         </div>
       </div>
 
-      <!-- Project 3 -->
       <div class="project-card">
         <div>
           <div class="project-number">03 / EMBEDDED SYSTEMS · HCI · HARDWARE</div>
@@ -898,7 +730,6 @@
         </div>
       </div>
 
-      <!-- Project 4 -->
       <div class="project-card">
         <div>
           <div class="project-number">04 / MACHINE LEARNING · HEALTHCARE</div>
@@ -931,18 +762,32 @@
 
 <hr class="divider" />
 
-<!-- ─── EXPERIENCE + EDUCATION ────────────────────────────── -->
 <section id="experience" class="section">
   <div class="container">
     <p class="eyebrow">Journey</p>
     <h2 class="section-title">Experience &amp; Education</h2>
-
     <div class="two-col">
 
-      <!-- LEFT: Experience -->
       <div>
         <p class="col-label">Work Experience</p>
         <div class="timeline">
+
+          <div class="timeline-item">
+            <div class="timeline-dot"></div>
+            <div class="timeline-date">Jun 2026 — Present</div>
+            <h3 class="timeline-title">ML & Deep Learning Research Intern</h3>
+            <div class="timeline-sub">Solar Energy Research Lab, IIT Mandi</div>
+            <span class="timeline-badge">🔬 Ongoing Research</span>
+            <div class="timeline-desc">
+              <ul>
+                <li>Developing ML and DL solutions for agrivoltaic systems, focusing on crop yield prediction and photovoltaic (PV) energy optimisation.</li>
+                <li>Collecting, preprocessing, and integrating agricultural, meteorological, and solar datasets for predictive modelling.</li>
+                <li>Implementing and evaluating regression models including Random Forest, XGBoost, CatBoost, DNN, CNN, RNN, and LSTM for crop yield prediction.</li>
+                <li>Conducting literature review and benchmarking state-of-the-art AI techniques for agrivoltaics, including deep learning, reinforcement learning, and hybrid physics-informed approaches.</li>
+                <li>Collaborating on research involving optimal solar panel tilt angle prediction and sustainable agrivoltaic land management.</li>
+              </ul>
+            </div>
+          </div>
 
           <div class="timeline-item">
             <div class="timeline-dot"></div>
@@ -962,7 +807,6 @@
 
         </div>
 
-        <!-- Certifications (under Experience column) -->
         <p class="col-label" style="margin-top: 48px;">Certifications</p>
         <div class="cert-list">
           <div class="cert-item">
@@ -976,14 +820,13 @@
         </div>
       </div>
 
-      <!-- RIGHT: Education -->
       <div>
         <p class="col-label">Education</p>
         <div class="timeline">
 
           <div class="timeline-item">
             <div class="timeline-dot"></div>
-            <div class="timeline-date">2023 — 2027 (Expected)</div>
+            <div class="timeline-date">2023 — 2027 </div>
             <h3 class="timeline-title">B.Tech · Robotics and Artificial Intelligence</h3>
             <div class="timeline-sub">Indian Institute of Technology Mandi (IIT Mandi)</div>
             <div class="timeline-desc">
@@ -1020,13 +863,11 @@
 
 <hr class="divider" />
 
-<!-- ─── CONTACT ───────────────────────────────────────────── -->
 <section id="contact" class="section">
   <div class="container">
     <p class="eyebrow" style="justify-content:center;">Let's Connect</p>
     <h2 class="contact-headline">Have a project in mind?<br>Let's build something.</h2>
     <p class="contact-sub">I'm open to research collaborations, internships, and interesting AI/robotics problems. Drop a message — I respond to everything.</p>
-
     <div class="contact-links">
       <a href="mailto:vullinavadheerkumar@gmail.com" class="contact-link" style="border-color: rgba(61,255,208,0.35); color: var(--accent);">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
